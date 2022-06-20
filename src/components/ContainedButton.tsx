@@ -1,12 +1,27 @@
-import React, { FC } from "react";
+import React, { FC, MouseEventHandler, ReactNode } from "react";
 
 interface ContainedButtonProps {
   text: string;
+  isActive: Boolean;
+  icon: ReactNode;
+  onClick: MouseEventHandler<HTMLButtonElement>
 }
 
-const ContainedButton: FC<ContainedButtonProps> = ({ text }) => {
+const ContainedButton: FC<ContainedButtonProps> = ({
+  text,
+  isActive,
+  icon,
+  onClick
+}) => {
   return (
-    <button className="w-full bg-purple hover:bg-blue-700 text-white font-bold py-3 px-5 rounded mx-8">
+    <button
+      className={
+        "w-full font-bold py-3 rounded-lg hover:bg-purple hover:text-white " +
+        (isActive ? "bg-purple text-white shadow" : "bg-white text-purple")
+      }
+      onClick={onClick}
+    >
+      {icon}
       {text}
     </button>
   );

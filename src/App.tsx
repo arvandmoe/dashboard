@@ -6,20 +6,23 @@ import SideBar from "./components/SideBar";
 
 function App() {
   return (
-    <div className="flex h-screen">
-      <div className="w-1/5">
-        <SideBar />
-      </div>
-      <div className="w-4/5">
-        <Router>
+    <Router>
+      <div className="flex h-screen">
+        <div className="w-1/5">
+          <div className="flex">
+            <SideBar />
+            <div className="bg-slate-100 w-1 h-screen" />
+          </div>
+        </div>
+        <div className="w-4/5">
           <Routes>
             <Route path="/" element={<Campaign />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="*" element={<Error />} />
           </Routes>
-        </Router>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
