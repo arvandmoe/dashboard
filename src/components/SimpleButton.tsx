@@ -17,7 +17,7 @@ const SimpleButton: FC<SimpleButtonProps> = ({
     <button
       className={
         "font-bold py-3 px-8 rounded-lg bg-white text-black shadow hover:bg-gray flex " +
-        (isActive ? "bg-gray" : "")
+        (isActive ? "bg-mgray" : "")
       }
       onClick={onClick}
     >

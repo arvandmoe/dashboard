@@ -10,7 +10,7 @@ const SearchBox: FC<SearchBoxProps> = ({ onClick }) => {
   return (
     <button
       className={
-        "font-bold py-3 px-8 rounded-lg bg-white text-black shadow hover:bg-gray flex "
+        "font-bold py-3 px-8 rounded-lg bg-white text-black shadow hover:bg-gray flex justify-self-end "
       }
       onClick={onClick}
     >

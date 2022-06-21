@@ -3,12 +3,16 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
+  ],
   theme: {
     extend: {},
     colors: {
-      purple: "#6864CF",
-      gray: "#D0D0D0",
+      mpurple: "#6864CF",
+      mgray: "#D0D0D0",
+      gray: colors.gray,
       green: colors.green,
       slate: colors.slate,
       white: colors.white,
@@ -18,5 +22,5 @@ module.exports = {
       blue: colors.blue,
     },
   },
-  plugins: [],
+  plugins: [require("flowbite/plugin")],
 };

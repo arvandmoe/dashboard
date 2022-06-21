@@ -16,8 +16,8 @@ const ContainedButton: FC<ContainedButtonProps> = ({
   return (
     <button
       className={
-        "w-full font-bold py-3 rounded-lg hover:bg-purple hover:text-white " +
-        (isActive ? "bg-purple text-white shadow" : "bg-white text-purple")
+        "w-full font-bold py-3 rounded-lg hover:bg-mpurple hover:text-white " +
+        (isActive ? "bg-mpurple text-white shadow" : "bg-white text-mpurple")
       }
       onClick={onClick}
     >

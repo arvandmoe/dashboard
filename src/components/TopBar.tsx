@@ -14,15 +14,16 @@ import Hubspot from "../resources/hubspot.png";
 import Pipedrive from "../resources/pipedrive.svg";
 import SearchBox from "./SearchBox";
 import SimpleButton from "./SimpleButton";
+import ThemeSwitch from "./ThemeSwitch";
 
-const CampaignBar = () => {
+const TopBar = () => {
   const campaignState = useSelector((state: RootState) => state.campaign);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
 
   return (
-    <div className="pt-8 px-8 flex space-x-8 justify-end">
+    <div className="pt-8 px-8 flex space-x-8 justify-start items-center">
       {location.pathname !== "/settings" && (
         <>
           <SimpleButton
@@ -54,6 +55,8 @@ const CampaignBar = () => {
           />
         </>
       )}
+      <div className="grow" />
+      <ThemeSwitch />
       <SearchBox
         onClick={() => {
           dispatch(toggleSearch());
@@ -64,4 +67,4 @@ const CampaignBar = () => {
   );
 };
 
-export default CampaignBar;
+export default TopBar;
