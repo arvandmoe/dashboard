@@ -6,11 +6,13 @@ import {
   toggleGoogle,
   toggleHubspot,
   togglePipe,
+  toggleSearch,
 } from "../redux/slices/campaignSlice";
 import { RootState } from "../redux/store";
 import GoogleDrive from "../resources/google-drive.png";
 import Hubspot from "../resources/hubspot.png";
 import Pipedrive from "../resources/pipedrive.svg";
+import SearchBox from "./SearchBox";
 import SimpleButton from "./SimpleButton";
 
 const CampaignBar = () => {
@@ -20,7 +22,7 @@ const CampaignBar = () => {
   const location = useLocation();
 
   return (
-    <div className="pt-8 pl-8 flex space-x-8">
+    <div className="pt-8 px-8 flex space-x-8 justify-end">
       {location.pathname !== "/settings" && (
         <>
           <SimpleButton
@@ -52,6 +54,12 @@ const CampaignBar = () => {
           />
         </>
       )}
+      <SearchBox
+        onClick={() => {
+          dispatch(toggleSearch());
+          navigate(ROUTES.CAMPAIGN.SEARCH);
+        }}
+      />
     </div>
   );
 };

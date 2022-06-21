@@ -8,6 +8,7 @@ import GoogleDrive from "./pages/GoogleDrive";
 import HubSpot from "./pages/HubSpot";
 import PipeDrive from "./pages/PipeDrive";
 import Settings from "./pages/Settings";
+import Search from "./pages/Search";
 
 function App() {
   return (
@@ -27,9 +28,16 @@ function App() {
             <div className="div h-5/6 m-8">
               <Routes>
                 <Route path="/" element={<Campaign />}>
-                  <Route path={ROUTES.CAMPAIGN.GOOGLE_DRIVE} element={<GoogleDrive />} />
+                  <Route
+                    path={ROUTES.CAMPAIGN.GOOGLE_DRIVE}
+                    element={<GoogleDrive />}
+                  />
                   <Route path={ROUTES.CAMPAIGN.HUBSPOT} element={<HubSpot />} />
-                  <Route path={ROUTES.CAMPAIGN.PIPEDIRVE} element={<PipeDrive />} />
+                  <Route
+                    path={ROUTES.CAMPAIGN.PIPEDIRVE}
+                    element={<PipeDrive />}
+                  />
+                  <Route path={ROUTES.CAMPAIGN.SEARCH} element={<Search />} />
                 </Route>
                 <Route path="/settings" element={<Settings />} />
                 <Route path="*" element={<Error />} />

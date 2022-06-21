@@ -3,7 +3,8 @@ import { createSlice } from '@reduxjs/toolkit'
 export const CAMPAIGN = {
     GOOGLE: "Google drive",
     HUBSPOT: "hubspot",
-    PIPE: "Pipedrive"
+    PIPE: "Pipedrive",
+    SEARCH: "search",
 }
 
 
@@ -20,8 +21,11 @@ const campaignSlice = createSlice({
         togglePipe(state) {
             state.value = CAMPAIGN.PIPE
         },
+        toggleSearch(state) {
+            state.value = CAMPAIGN.SEARCH
+        },
     }
 })
 
-export const { toggleGoogle, toggleHubspot, togglePipe } = campaignSlice.actions
+export const { toggleGoogle, toggleHubspot, togglePipe, toggleSearch } = campaignSlice.actions
 export default campaignSlice.reducer
