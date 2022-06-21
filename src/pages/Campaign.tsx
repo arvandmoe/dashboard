@@ -1,9 +1,11 @@
-import React from 'react'
+import { Outlet } from "react-router-dom";
 
 const Campaign = () => {
   return (
-    <div>Campaign</div>
-  )
-}
+    <div className="h-full">
+      <Outlet />
+    </div>
+  );
+};
 
-export default Campaign
+export default Campaign;

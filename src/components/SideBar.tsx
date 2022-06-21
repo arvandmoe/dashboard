@@ -1,15 +1,16 @@
 import { faBullhorn, faGear } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../constants/routes";
+import { toggleGoogle } from "../redux/slices/campaignSlice";
 import {
   SIDEBAR,
   toggleCampaign,
-  toggleSettings,
+  toggleSettings
 } from "../redux/slices/sidebarSlice";
 import { RootState } from "../redux/store";
 import ContainedButton from "./ContainedButton";
-import { useNavigate } from "react-router-dom";
-import { ROUTES } from "../constants/routes";
 
 const SideBar = () => {
   const sideBarState = useSelector((state: RootState) => state.sideBar.value);
@@ -23,8 +24,9 @@ const SideBar = () => {
         text="Campaign"
         icon={<FontAwesomeIcon icon={faBullhorn} className="px-2" />}
         onClick={() => {
+          dispatch(toggleGoogle());
           dispatch(toggleCampaign());
-          navigate(ROUTES.HOME);
+          navigate(ROUTES.CAMPAIGN.ROOT);
         }}
       />
       <ContainedButton
